@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header">
+    <h1>Afiliados</h1>
+    <button type="button" routerLink="/create">crear afiliado</button>
+  </div>
+  <div class="body">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombres</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Género</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of affiliateList; track $index) {
+        <tr>
+          <td>{{ item.names }}</td>
+          <td>{{ item.dateOfBirth }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.gender }}</td>
+          <td>
+            <div class="actions">
+              <button>Edit</button>
+              <button (click)=onDelete(item.id)>Delete</button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

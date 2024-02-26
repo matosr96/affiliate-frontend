@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Crear Afiliado</h2>
+    <form  [formGroup]="formAffiliate" (submit)=onSubmit()>
+      <label for="names">Nombres:</label>
+      <input type="text" id="names" formControlName="names" required />
+
+      <label for="dateOfBirth">Fecha de Nacimiento:</label>
+      <input type="date" id="dateOfBirth" formControlName="dateOfBirth" required />
+
+      <label for="address">Dirección:</label>
+      <input type="text" id="address" formControlName="address" required />
+
+      <label for="phone">Teléfono:</label>
+      <input type="tel" id="phone" formControlName="phone" required />
+
+      <label for="gender">Género:</label>
+      <select id="gender" required formControlName="gender"  >
+        <option value="Male">Masculino</option>
+        <option value="Female">Femenino</option>
+        <option value="Other">Otro</option>
+      </select>
+
+      <div class="actions-create">
+        <button type="button" routerLink="/">Cancelar</button>
+        <button type="submit">Guardar Afiliado</button>
+      </div>
+    </form>
+  </div>
+</div>
